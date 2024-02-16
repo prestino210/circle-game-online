@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preston's Agar.io</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" sizes="16x16">
+    
+    <style>
+        body, html {
+            margin : 0 auto;
+            overflow : hidden;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @font-face {
+            font-family: 'UbuntuB';
+            src: url('assets/Ubuntu-Bold.ttf') format('truetype');
+        }
+
+  
+        #touch-controls {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #touch-controls button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        
+        #up-button {
+            transform: translate(71px, -75px);
+            background-image: url('assets/up-arrow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        #left-button {
+            transform: translate(-40px, -10px);
+            background-image: url('assets/left-arrow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        #down-button {
+            transform: translate(-46px, -10px);
+            background-image: url('assets/down-arrow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        #right-button {
+            transform: translate(-50px, -10px);
+            background-image: url('assets/right-arrow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        #zoom-in-button {
+            transform: translate(16px, -90px);
+            background-image: url('assets/zoom-in.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        #zoom-out-button {
+            transform: translate(-42px, -20px);
+            background-image: url('assets/zoom-out.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        #zoom-out-button {
+            transform: translate(-42px, -20px);
+            background-image: url('assets/zoom-out.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        #lb-toggle {
+            transform: translate(-350px, -200px);
+            background-image: url('assets/hide-lb.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    </style>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/app.js" id="script" type="module" defer></script>
+</head>
+<body>
+    <canvas></canvas>
+
+    <div id="touch-controls">
+        <button id="up-button"></button>
+        <button id="left-button"></button>
+        <button id="down-button"></button>
+        <button id="right-button"></button>
+        <button id="zoom-in-button"></button>
+        <button id="zoom-out-button"></button>
+        <button id="lb-toggle"></button>
+    </div>
+</body>
+</html>
