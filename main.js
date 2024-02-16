@@ -11,16 +11,17 @@ const io = new Server(server);
 
 app.use('/game', express.static(__dirname + '/public')); 
 
-app.get('/game/:gameID', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
-});
 
-app.use('/', express.static(__dirname + '/public'));
+//app.use('/', express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => { 
     //let gameID = crypto.randomUUID();
     const gameID = crypto.randomBytes(8).toString('hex');
+    app.get(`/game/${gameID}`, (req, res) => {
+        res.sendFile(__dirname + `/public/index.html`);
+    });
     res.redirect(`/game/${gameID}`);
+    
 });
 
 io.on('connection', (socket) => {
